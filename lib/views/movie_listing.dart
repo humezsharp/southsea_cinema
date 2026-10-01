@@ -19,3 +19,10 @@ class MovieListing extends StatelessWidget {
     );
   }
 }
+
+class MovieOne extends StatelessWidget {
+  const MovieOne({super.key});
+
+  
+
+}
