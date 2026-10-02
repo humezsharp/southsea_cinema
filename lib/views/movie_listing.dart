@@ -15,9 +15,14 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: const SizedBox.shrink(
-          child: Text('Testing text'),
-      ),
+      body: Text.rich(
+        TextSpan(
+          children: [
+          TextSpan(text: 'HOT FUZZ (2007), (15)\n', style: TextStyle(fontSize: 27),),
+          TextSpan(text: 'Southsea Cinema Room', style: TextStyle(fontSize: 20),),
+         ],
+        ),
+      )
     );
   }
 }
