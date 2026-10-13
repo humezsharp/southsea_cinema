@@ -15,15 +15,18 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: Text.rich(
-        TextSpan(
-          children: [
-          TextSpan(text: 'HOT FUZZ (2007), (15)\n', style: TextStyle(fontSize: 27),),
-          TextSpan(text: 'Southsea Cinema Room', style: TextStyle(fontSize: 20),),
-         ],
-        ),
-      )
-    );
+      body: Column(
+        children: [
+            Text('HOT FUZZ (2009) 15'),
+            Text(''),
+            Text('Southsea Cinema Room'),
+            Text('Friday 10th October'),
+            Text(''),
+            Text('Please know that discounts will be applied at checkout'),
+            Text('Select quantaties (5 total)')
+        ], 
+      ),  
+    ); 
   }
 }
 
