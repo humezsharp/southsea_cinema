@@ -25,7 +25,11 @@ class MovieListing extends StatelessWidget {
             Text(''),
             Text('Please know that discounts will be applied at checkout'),
             Text('Select quantaties (5 total)')
-        ], 
+            ElevatedButton(
+              onPressed: print('One ticket added'),
+              child: const Text('ADD TO ORDER'),
+            )
+          ], 
       ),  
     ); 
   }
