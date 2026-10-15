@@ -16,8 +16,9 @@ class MovieListing extends StatelessWidget {
       ),
       drawer: const NavDrawer(),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-            Text('HOT FUZZ (2009) 15'),
+            Text('HOT FUZZ (2009) 15', style: TextStyle(fontSize: 25)),
             Text(''),
             Text('Southsea Cinema Room'),
             Text('Friday 10th October'),
