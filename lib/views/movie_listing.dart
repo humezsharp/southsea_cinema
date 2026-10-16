@@ -19,10 +19,10 @@ class MovieListing extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
             Text('HOT FUZZ (2009) 15', style: TextStyle(fontSize: 25)),
-            Text(''),
+            SizedBox(height: 30),
             Text('Southsea Cinema Room'),
             Text('Friday 10th October'),
-            Text(''),
+            SizedBox(height: 30),
             Text('Please know that discounts will be applied at checkout'),
             Text('Select quantaties (5 total)'),
             SizedBox(height: 20),
