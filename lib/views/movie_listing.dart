@@ -24,11 +24,12 @@ class MovieListing extends StatelessWidget {
             Text('Friday 10th October'),
             Text(''),
             Text('Please know that discounts will be applied at checkout'),
-            Text('Select quantaties (5 total)')
+            Text('Select quantaties (5 total)'),
+            SizedBox(width: 16),
             ElevatedButton(
               onPressed: (){}, 
-              child: Text('Add To Order')
-            )
+              child: const Text('ADD TO ORDER')
+            ),
         ],
       ),  
     ); 
