@@ -25,7 +25,8 @@ class MovieListing extends StatelessWidget {
             Text(''),
             Text('Please know that discounts will be applied at checkout'),
             Text('Select quantaties (5 total)'),
-            SizedBox(width: 16),
+            SizedBox(height: 20),
+            Text('TICKETS', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500)),
             ElevatedButton(
               onPressed: (){}, 
               child: const Text('ADD TO ORDER')
