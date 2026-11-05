@@ -1,9 +1,20 @@
-import 'package:flutter/cupertino.dart';
+class Movie {
+  final String id; 
+  final String title;
+  final String synopsis;
+  final String ageRating;
+  final String screenTime;
+  final double ticketPrice;
+  final String imagePath;
 
-class Movie extends StatefulWidget {
-  const Movie({super.key});
+  const Movie({
+    required this.id, 
+    required this.title, 
+    required this.synopsis, 
+    required this.ageRating, 
+    required this.screenTime, 
+    required this.ticketPrice, 
+    required this.imagePath,
+  });
 
-  @override
-  // ignore: no_logic_in_create_state
-  State<StatefulWidget> createState() => throw UnimplementedError();
 }
