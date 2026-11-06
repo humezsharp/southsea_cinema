@@ -10,8 +10,6 @@ class MovieListing extends StatefulWidget {
 }
 
 class _MovieListingState extends State<MovieListing> {
-  @override
-  
   int _ticketQuantity = 0;
 
   void _incrementTicket(){
