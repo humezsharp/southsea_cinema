@@ -14,6 +14,7 @@ class MovieScreen extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         title: const Text('Movie Listings'),
+        titleTextStyle: TextStyle(color: Color.fromARGB(255, 252, 251, 251),fontWeight: FontWeight.bold),
       ),
       body: ListView.builder(
         itemCount: movies.length, 

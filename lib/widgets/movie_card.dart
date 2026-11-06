@@ -9,7 +9,8 @@ class MovieCard extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      color: Colors.transparent,
+      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
