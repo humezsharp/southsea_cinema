@@ -18,6 +18,7 @@ class _MovieListingState extends State<MovieListing> {
     });
   }
   
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

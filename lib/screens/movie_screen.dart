@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
 import 'package:southsea_cinema/widgets/movie_card.dart';
+import 'package:southsea_cinema/constants.dart';
 
 class MovieScreen extends StatelessWidget{
   const MovieScreen({super.key});
@@ -13,8 +14,8 @@ class MovieScreen extends StatelessWidget{
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Movie Listings'),
-        titleTextStyle: TextStyle(color: Color.fromARGB(255, 252, 251, 251),fontWeight: FontWeight.bold),
+        title: Text(appTitle),
+        titleTextStyle: cinemaHeaderStyle,
       ),
       body: ListView.builder(
         itemCount: movies.length, 
