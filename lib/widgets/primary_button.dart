@@ -16,7 +16,7 @@ class PrimaryButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: cinemaBackground,
-        foregroundColor: cinemaSurface,
+        foregroundColor: cinemaBrand,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.zero,
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/widgets/primary_button.dart';
 
 class MovieListing extends StatefulWidget {
   const MovieListing({super.key});
@@ -61,10 +62,7 @@ class _MovieListingState extends State<MovieListing> {
                   DropdownMenuEntry(value: 5, label: '5'),
                 ],
               ),
-              ElevatedButton(
-                onPressed: _incrementTicket, 
-                child: const Text('ADD TO ORDER')
-              ),
+              PrimaryButton(label: 'ADD TO ORDER', onPressed: _incrementTicket),
               Text('Tickets selected: $_ticketQuantity')
           ],
         ),
