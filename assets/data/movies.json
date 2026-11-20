@@ -1,0 +1,11 @@
+[
+    {
+        "id": "001",
+        "title": "HOT FUZZ", 
+        "synopsis": "Simon Pegg and Nick Frost shoot West Country Pensioners", 
+        "ageRating": "12", 
+        "screenTime": "Saturday 16th December, 1:45", 
+        "ticketPrice": 7.99, 
+        "imagePath": "assets/images/Matt-Ferguson-Hot-Fuzz-Alternative-Movie-Poster_1200x.png"
+    }
+]
