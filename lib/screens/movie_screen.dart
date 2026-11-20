@@ -3,6 +3,7 @@ import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
 import 'package:southsea_cinema/widgets/movie_card.dart';
 import 'package:southsea_cinema/constants.dart';
+import 'package:southsea_cinema/widgets/basket_button.dart';
 
 class MovieScreen extends StatelessWidget{
   const MovieScreen({super.key});
@@ -16,10 +17,11 @@ class MovieScreen extends StatelessWidget{
       appBar: AppBar(
         title: Text(appTitle),
         titleTextStyle: cinemaHeaderStyle,
+        actions: const [BasketButton()],
       ),
       body: ListView.builder(
         itemCount: movies.length, 
-        itemBuilder: (context, index) {  
+        itemBuilder: (BuildContext context, int index) {  
           return MovieCard(movie: movies[index]);
         },
       ),

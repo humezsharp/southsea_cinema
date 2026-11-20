@@ -30,6 +30,7 @@ class SouthseaCinemaApp extends StatelessWidget {
         '/Movies':(context) => const MovieScreen(),
         '/': (context) => const HomeView(),
         '/listing': (context) => const MovieListing(),
+        '/basket':(context) => const BasketScreen(),
       },
     );
   }
