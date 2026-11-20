@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/widgets/primary_button.dart';
-import 'package:southsea_cinema/repositories/cart_repository.dart';
 
 class MovieCard extends StatelessWidget{
   final Movie movie;
