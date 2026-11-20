@@ -33,6 +33,7 @@ class _BasketScreenState extends State<BasketScreen> {
   Widget build(BuildContext context) {
     final CartRepository cart = CartRepository.instance;
     final List<CartItem> items = cart.getItems();
+
     final Widget content;
     if (items.isEmpty) {
       if (_confirmationMessage.isNotEmpty) {
@@ -51,7 +52,7 @@ class _BasketScreenState extends State<BasketScreen> {
         content = _buildEmptyState();
       }
     } else {
-      content = const Text('Basket list placeholder');
+      content = _buildBasketList(cart, items);
     }
 
     return Scaffold(
@@ -59,10 +60,100 @@ class _BasketScreenState extends State<BasketScreen> {
         title: const Text(appTitle, style: cinemaHeaderStyle),
         actions: const [BasketButton()],
       ),
-      body: const SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
-        child: Text('Basket placeholder'),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: content,
       ),
+    );
+  }
+
+  Widget _buildLineItem(CartRepository cart, CartItem item, int index) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '${item.quantity} x ${item.movie.title}',
+                  style: const TextStyle(fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(height: 4),
+                Text('£${item.LineTotal.toStringAsFixed(2)}'),
+              ],
+            ),
+          ),
+          IconButton(
+            icon: const Icon(Icons.delete_outline, color: Colors.red),
+            onPressed: () {
+              setState(() {
+                cart.removeItem(index);
+              });
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTotalRow(String label, String value, {bool emphasise = false}) {
+    final TextStyle style;
+    if (emphasise) {
+      style = const TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
+    } else {
+      style = const TextStyle(color: cinemaBrand);
+    }
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(label, style: style),
+          Text(value, style: style),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBasketList(CartRepository cart, List<CartItem> items) {
+    final List<Widget> children = [];
+
+    children.add(const Text('CURRENT BASKET'));
+    children.add(const SizedBox(height: 16));
+
+    for (int index = 0; index < items.length; index++) {
+      final CartItem item = items[index];
+      children.add(_buildLineItem(cart, item, index));
+    }
+
+    children.add(const SizedBox(height: 24));
+    children.add(
+      _buildTotalRow(
+        'Price Subtotal',
+        '£${cart.getSubtotal().toStringAsFixed(2)}',
+      ),
+    );
+    children.add(const SizedBox(height: 24));
+    children.add(
+      SizedBox(
+        width: double.infinity,
+        child: PrimaryButton(
+          label: 'Checkout',
+          onPressed: () {
+            setState(() {
+              cart.clear();
+              _confirmationMessage = 'Cart Cleared';
+            });
+          },
+        ),
+      ),
+    );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: children,
     );
   }
 }
