@@ -4,6 +4,7 @@ import 'package:southsea_cinema/repositories/movie_repository.dart';
 import 'package:southsea_cinema/widgets/movie_card.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/basket_button.dart';
+import 'package:southsea_cinema/widgets/primary_button.dart';
 
 class MovieScreen extends StatelessWidget{
   const MovieScreen({super.key});
