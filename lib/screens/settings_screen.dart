@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+import 'package:southsea_cinema/constants.dart';
+import 'package:southsea_cinema/widgets/basket_button.dart';
+
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(appTitle),
+        titleTextStyle: cinemaHeaderStyle,
+        actions: const [BasketButton()],
+      ),
+      body: const Center(
+        child: Text('SETTINGS (TBC)'),
+      ),
+    );
+  }
+}
